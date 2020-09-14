@@ -42,15 +42,23 @@ class Home extends CI_Controller {
 		$data = $this->input->post();
 
 		if (empty($data["name"])) {
-			$json["error_list"]["#name"] = "Nome é obrigatório!";
+			$json["error_list"]["#name"] = "O Nome é obrigatório!";
 		}
 
 		if (empty($data["email"])) {
-			$json["error_list"]["#email"] = "E-mail é obrigatório!";
+			$json["error_list"]["#email"] = "O E-mail é obrigatório!";
 		}
 
 		if (empty($data["cpf"])) {
-			$json["error_list"]["#cpf"] = "CPF é obrigatório!";
+			$json["error_list"]["#cpf"] = "O CPF é obrigatório!";
+		} else {
+			if (! $this->doadores_model->validaCPF($data["cpf"])) {
+				$json["error_list"]["#cpf"] = "Entre com um CPF válido";
+			}
+		}
+
+		if (empty($data["value"])) {
+			$json["error_list"]["#value"] = "O Valor é obrigatório!";
 		} 
 
 		if (!empty($json["error_list"])) {
@@ -58,9 +66,7 @@ class Home extends CI_Controller {
 		} else {
 
 			if (empty($data["donor_id"])) {
-				$fuso = new DateTimeZone('America/Sao_Paulo');
-				$date->setTimezone($fuso);
-				$data["date_register"] = $date->format("Y-m-d"); 
+				$data["date_register"] = date("Y-m-d"); 
 				$this->doadores_model->insert($data);
 			} else {
 				$donor_id = $data["donor_id"];
