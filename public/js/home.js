@@ -1,8 +1,9 @@
 $(function() {
 
-	$("#select").attr("class", "form-control");
+	$(document).ready(function(){
+		$("select").attr("class", "form-control");
+    });	
 
-	// EXIBIR MODAL
 	$("#btn_add_donor").click(function(){
 		clearErrors();
 		$("#form_donor")[0].reset();

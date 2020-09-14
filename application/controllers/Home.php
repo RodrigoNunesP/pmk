@@ -41,11 +41,26 @@ class Home extends CI_Controller {
 
 		$data = $this->input->post();
 
+		if (empty($data["name"])) {
+			$json["error_list"]["#name"] = "Nome é obrigatório!";
+		}
+
+		if (empty($data["email"])) {
+			$json["error_list"]["#email"] = "E-mail é obrigatório!";
+		}
+
+		if (empty($data["cpf"])) {
+			$json["error_list"]["#cpf"] = "CPF é obrigatório!";
+		} 
+
 		if (!empty($json["error_list"])) {
 			$json["status"] = 0;
 		} else {
 
 			if (empty($data["donor_id"])) {
+				$fuso = new DateTimeZone('America/Sao_Paulo');
+				$date->setTimezone($fuso);
+				$data["date_register"] = $date->format("Y-m-d"); 
 				$this->doadores_model->insert($data);
 			} else {
 				$donor_id = $data["donor_id"];
@@ -71,6 +86,8 @@ class Home extends CI_Controller {
 
 		$donor_id = $this->input->post("donor_id");
 		$data = $this->doadores_model->get_data($donor_id)->result_array()[0];
+
+		
 		$json["input"]["donor_id"] = $data["donor_id"];
 		$json["input"]["name"] = $data["name"];
 		$json["input"]["email"] = $data["email"];
@@ -109,28 +126,19 @@ class Home extends CI_Controller {
 			exit("Nenhum acesso de script direto permitido!");
 		}
 
-		$this->load->model("Payments_model");
-		$this->load->model("Interval_model");
 		$this->load->model("doadores_model");
 		$donors = $this->doadores_model->get_datatable();
 
 		$data = array();
 		foreach ($donors as $donor) {
 
-			$interval = $this->Interval_model->get_interval_data($donor->interval_donation);
-			$payment = $this->Payments_model->get_payment_data($donor->payment);
+			$idade = $this->doadores_model->calcularIdade($donor->date_birthday);
 
+			$row = array();
 			$row[] = $donor->name;
 			$row[] = $donor->email;
 			$row[] = $donor->cpf;
-			$row[] = $donor->fone1;
-			$row[] = $donor->fone2;
-			$row[] = $donor->date_birthday;
-			$row[] = $donor->date_register;
-			$row[] = $interval->type;
-			$row[] = $donor->value;
-			$row[] = $payment->type;
-			$row[] = $donor->adress;
+			$row[] = $idade;
 
 			$row[] = '<div style="display: inline-block;">
 						<button class="btn btn-primary btn-edit-donor" 

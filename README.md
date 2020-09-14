@@ -22,23 +22,23 @@ Substituir a url raiz (http://localhost/pmk/pmk/) para a correspondente em seu a
  ## Termos do desafio
 
  1. Projeto CRUD para cadastrar dados de Doadores.
-    - [] a. Informações necessárias para o cadastro:
-        - [] Nome;
-        - [] Email;
-        - [] CPF;
-        - [] Telefone (Pode ter até 2 números de telefones);
-        - [] Data de Nascimento;
-        - [] Data do Cadastro;
-        - [] Intervalo de Doação (Unico; Bimestral; Semestral; Anual);
-        - [] Valor da Doação;
-        - [] Forma de Pagamento (Débito e Credito - Criar tabelas para armazenar cada forma de pagamento) ;
-        - [] Endereço Completo
+    - [ ] a. Informações necessárias para o cadastro:
+        - [ ] Nome;
+        - [ ] Email;
+        - [ ] CPF;
+        - [ ] Telefone (Pode ter até 2 números de telefones);
+        - [ ] Data de Nascimento;
+        - [ ] Data do Cadastro;
+        - [ ] Intervalo de Doação (Unico; Bimestral; Semestral; Anual);
+        - [ ] Valor da Doação;
+        - [ ] Forma de Pagamento (Débito e Credito - Criar tabelas para armazenar cada forma de pagamento) ;
+        - [ ] Endereço Completo
 
-    - [] b. A listagem deverá mostrar Nome, Email, CPF e Idade, junto com opções de filtro;
-    - [] c. Criar o banco de dados seguindo as regras de normalização;
+    - [ ] b. A listagem deverá mostrar Nome, Email, CPF e Idade, junto com opções de filtro;
+    - [ ] c. Criar o banco de dados seguindo as regras de normalização;
 
 2. Junto com o teste, enviar também o DUMP do banco de dados.
-    - [] Critérios técnicos para desenvolvimento do projeto
-    - [] O projeto deve ser escrito em PHP, utilizando banco de dados Mysql.
-    - [] Boas práticas de programação serão avaliadas.
-    - [] Desejavel (não obrigatório) uso de javascript.
+    - [ ] Critérios técnicos para desenvolvimento do projeto
+    - [ ] O projeto deve ser escrito em PHP, utilizando banco de dados Mysql.
+    - [ ] Boas práticas de programação serão avaliadas.
+    - [ ] Desejavel (não obrigatório) uso de javascript.

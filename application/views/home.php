@@ -22,14 +22,7 @@
                 <th>Nome</th>
                 <th>Email</th>
                 <th>CPF</th>
-                <th>Tel#1</th>
-                <th>Tel#2</th>
-                <th>Aniversário</th>
-                <th>Entrada</th>
-                <th>Intervalo de doação</th>
-                <th>Valor</th>
-                <th>Forma de pagamento</th>
-                <th>Endereço</th>
+                <th>Idade</th>
                 <th class="dt-center no-short">Editar</th>
               </tr>
             </thead>
@@ -59,35 +52,35 @@
           
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Nome</label><input id="name" name="name" class="form-control" maxlength="100">
+            <label>Nome</label><input type="text" id="name" name="name" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Email</label><input  id="email" name="email" class="form-control" maxlength="30">
+            <label>Email</label><input type="email"  id="email" name="email" class="form-control" maxlength="30">
               <span class="help-block"></span>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>CPF</label><input id="cpf" name="cpf" class="form-control" maxlength="100">
+            <label>CPF</label><input type="number" id="cpf" name="cpf" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Telefone 1</label><input id="fone1" name="fone1" class="form-control" maxlength="100">
+            <label>Telefone 1</label><input type="number" id="fone1" name="fone1" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Telefone 2</label><input id="fone2" name="fone2" class="form-control" maxlength="100">
+            <label>Telefone 2</label><input type="number" id="fone2" name="fone2" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>
@@ -96,14 +89,6 @@
             <div class="col-lg-12">
                 <label>Data de Nascimento</label>
                 <input type="date" id="date_birthday" name="date_birthday" class="form-control">
-              <span class="help-block"></span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-lg-12">
-                <label>Data de Registro</label>
-                <input type="date" id="date_register" name="date_register" class="form-control">
               <span class="help-block"></span>
             </div>
           </div>
@@ -118,7 +103,7 @@
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Valor</label><input id="value" name="value" class="form-control" maxlength="100">
+            <label>Valor</label><input type="number" id="value" name="value" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>
@@ -133,7 +118,7 @@
 
           <div class="form-group">
             <div class="col-lg-12">
-            <label>Endereço</label><input id="adress" name="adress" class="form-control" maxlength="100">
+            <label>Endereço</label><input type="text" id="adress" name="adress" class="form-control" maxlength="100">
               <span class="help-block"></span>
             </div>
           </div>

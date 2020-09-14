@@ -123,5 +123,19 @@ class Doadores_model extends CI_Model {
 		return $list_payments;
 	}
 
+	public function calcularIdade($date){
+		$time = strtotime($date);
+		if($time === false){
+		  return '';
+		}
+	 
+		$year_diff = '';
+		$date = date('Y-m-d', $time);
+		list($year,$month,$day) = explode('-',$date);
+		$year_diff = date('Y') - $year;
+	 
+		return $year_diff;
+	}
+
 }
 
